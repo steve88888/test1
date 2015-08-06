@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<h1>Search Users</h1>
+<h4>Please enter your location and the field you wish to search for users in:<br><br></h4> 
+<form method='POST' action = '.'>{% csrf_token %}
+{{ form|crispy }}
+<input type = 'submit' value = 'Submit'/>
+</form>
+
+
+  {% for signup in users %}
+ <table border = "1" style = "width:100%">
+ 	<tr>
+ 		<td><li><a href = '/members/{{ signup.userID }}'>{{ signup.full_name }}</td></a> <td>Email : {{ signup.email }}</td> <td>Location : {{ signup.location }}</td></br>
+ 	<td>{{ signup.expertise }}</td></li>
+ </tr></br>
+ </table>
+  {% endfor %}
+  {% endblock %}
+
+

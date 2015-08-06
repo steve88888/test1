@@ -1,0 +1,17 @@
+ {% extends "base.html" %}
+ {% load i18n %}
+{% load crispy_forms_tags %}
+ {% block content %}
+ <h1>Project Details for {{ single_project }}<br><br></h1>
+ <ul>
+ <li><b>Title:</b> {{ single_project.name }}</li>
+ <li><b>Location:</b> {{ single_project.location }}</li>
+ <li><b>Description:</b> {{ single_project.description }}<br><br></li>
+ <li><b>Team Members:</b> {{ single_project.team_members }}</li>
+ <li><b>Author:</b> {{ single_project.user }}</li>
+ <li><b>Contact Email:</b> {{ single_project.contact_email }}</li>
+</ul>
+
+
+
+ {% endblock %}

@@ -1,0 +1,60 @@
+ {% extends "base.html" %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+ {% block content %}
+ <h1>Profile for {{ single_user }}</h1>
+ {{ single_user.full_name }}
+  {{ single_user.location }}
+<div class = 'row'>
+<div class = 'col-lg-6'>
+
+
+<li><img src = '{{ single_user.picture }}' class='img-responsive'/></li>
+
+
+
+
+</div>
+  <div class = 'col-lg-6'>
+<div class = 'panel'
+	<div class = 'panel-heading'> User Information</div>
+
+
+
+ <ul>
+ 	
+	<li>Name: {{ single_user.full_name }}</li> 
+	<li>Email: {{ single_user.email }}</li>
+	<li>CurrentDegree: {{ single_user.CurrentDegree }}</li> 
+	<li>location: {{ single_user.location }}</li> 
+</ul>
+</div>
+<div class = 'col-lg-6'>
+<div class = 'panel'>
+	<div class = 'panel-heading'></div>
+<ul>
+	
+</ul>
+</div>
+</div>
+<div class = 'col-lg-6'>
+<div class = 'panel'>
+	<div class = 'panel-heading'>Skills and Experience</div>
+<ul>
+	<li>Skills:</br><p> {{ single_user.skills }}</li></p> 
+	<li>Experience:</br><p> {{ single_user.Experience }}</li></p>
+	<li>Currentprojects:</br> {{ single_user.Currentprojects }}</li> </p>
+</ul>
+</div>
+</div>
+	
+
+	
+
+</ul>
+</div>
+
+
+
+ {% endblock %}
+

@@ -1,0 +1,11 @@
+  {% extends "base.html" %}
+  {% block content %}
+  <h1> Search results for Projects </h1>
+
+
+ {% for project in projects %}
+  <li><a href = '/projects/{{ project.projectID }}'>{{ project }}</a> {% for item in project.ProjectTitle_set.all %}{{ item }}{% endfor %}</li>
+  {% endfor %}
+
+  <h4>Testing</h4>
+  {% endblock %}

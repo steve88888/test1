@@ -1,0 +1,12 @@
+  {% extends "base.html" %}
+  {% block content %}
+  {% for user in users %}
+ <table border = "1" style = "width:100%">
+ 	<tr>
+ 		<td><li><a href = '/members/{{ user.username }}'>{{ user }}</td></a> {% for item in user.signup_set.all %}<td>Email : {{ item }}</td> <td>Location : {{ item.location }}</td></br>
+ 	<td>{{ item.skills }}</td>{% endfor %}</li>
+ </tr></br>
+ </table>
+  {% endfor %}
+  {% endblock %}
+

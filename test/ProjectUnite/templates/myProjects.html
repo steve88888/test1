@@ -1,0 +1,23 @@
+ {% extends "base.html" %}
+ {% load crispy_forms_tags %}
+  {% block content %}
+  
+<h1>My Projects</h1>
+<h4>Please select your project to edit:<br><br></h4> 
+ {{ projects.projectID }}
+  {% for project in projects %}
+  <li><a href = '/editpro/{{ project.projectID }}'>{{ project }}</a> <h6> ProjectID : {{ project.projectID }} </h6></li>
+
+ 	</br>
+
+  {% endfor %}
+
+  <p></p>
+  <h1>Delete a project</h1>
+  <h4>Type the I.D of the project you wish to delete<br><br></h4>
+  <form method='POST' action = '.'>{% csrf_token %}
+  {{ form|crispy }}
+  {{ title }}
+<input class = 'btn btn-primary' type='submit' value = 'DELETE'/>
+</form>
+  {% endblock %}
